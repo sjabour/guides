@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>SproutCore Guides</title>
+  <title>SproutCore Guides: SproutCore - Testing Guidelines</title>
 
   <!-- guides styles -->
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
@@ -91,144 +91,38 @@
   <div id="container">
     <div class="wrapper">
       <div id="mainCol">
+          <div class="headerSection">
+            <h2>SproutCore &#8211; Testing Guidelines</h2>
+<p>This guide covers using test-driven development (<span class="caps">TDD</span>) techniques to develop SproutCore applications. After reading this guide, you will be able to:</p>
+<ul>
+	<li>Write tests for methods to be implemented and use them to help you implement them.</li>
+	<li>Write tests to verify that your observers fire when you expect them to.</li>
+	<li>Write tests that verify your bindings fire when you expect them to and how to incorporate <tt>SC.RunLoop</tt> so that they will function.</li>
+	<li><em><span class="caps">TODO</span></em>: more</li>
+</ul>
+
+          </div>
         
-  <h3 class="group">Start Here</h3>
-
-  <dl>
-      <dt><a href="getting_started.html">Getting Started: Part 1</a></dt>
-      <dd class="clearfix">
-        <p>Learn how to build a robust web app using the power of SproutCore along with the technologies you already know, like HTML and CSS.</p>
-      </dd>
-      <dt><a href="getting_started_2.html">Getting Started: Part 2</a></dt>
-      <dd class="clearfix">
-        <p>Connect the application you wrote in Part 1 to SproutCore's data store, and learn how to test with fixture data.</p>
-      </dd>
-      <dt><a href="core_concepts.html">Core Concepts</a></dt>
-      <dd class="clearfix">
-        <p>In this guide, we will touch on many of the core concepts of SproutCore like bindings and the run loop. We'll cover just enough to get you going with out getting bogged down in the details. If you want to learn more, take a look at the detailed overviews of these concepts in the &quot;Digging Deeper&quot; section.</p>
-      </dd>
-      <dt><a href="enumerables.html">Enumerables</a></dt>
-      <dd class="clearfix">
-        <p>To simplify working with various kinds of lists, SproutCore provides a unified Enumerable interface. This guide explores which SproutCore objects are Enumerable, and how to use the Enumerable API.</p>
-      </dd>
-  </dl>
-  <h3 class="group">Views</h3>
-
-  <dl>
-      <dt><a href="using_handlebars.html">Using Handlebars Templates</a></dt>
-      <dd class="clearfix">
-        <p>Learn how to make your application come to life by leveraging the tight integration between SproutCore and Handlebars, a semantic templating language.</p>
-      </dd>
-      <dt><a href="views.html">Core View Concepts</a></dt>
-      <dd class="clearfix">
-        <p>In this guide, we will cover the basics of SproutCore views, and show you how to customize the built-in SproutCore views for your own use.</p>
-      </dd>
-  </dl>
-  <h3 class="group">Models</h3>
-
-  <dl>
-      <dt><a href="records.html">SproutCore Records</a></dt>
-      <dd class="clearfix">
-        <p>The SproutCore data framework is a full-featured ORM-like framework for working with data in SproutCore. Learn about the SproutCore data framework and how you can use it to interact with your data sources.</p>
-      </dd>
-      <dt><a href="fixtures.html">Using Fixtures</a></dt>
-      <dd class="clearfix">
-        <p>In order to facilitate rapid development, SproutCore provides a facility for using pre-set fixture data as your data source. This guide covers how to set up your fixtures, and how to replace them with your real server once you're ready to get going.</p>
-      </dd>
-  </dl>
-  <h3 class="group">Theming</h3>
-
-  <dl>
-      <dt><a href="chance.html">Using Chance, SproutCore's CSS Framework</a></dt>
-      <dd class="clearfix">
-        <p>Chance is SproutCore's CSS preprocessor. In this guide, you will learn how to use the CSS extensions that come with Chance to streamline your styling workflow.</p>
-      </dd>
-      <dt><a href="theming_app.html">Theming Your App</a></dt>
-      <dd class="clearfix">
-        <p>In this guide, we'll cover how to change the style of SproutCore controls in your app. As an example, we'll re-theme an SC.ButtonView.</p>
-      </dd>
-  </dl>
-  <h3 class="group">Testing</h3>
-
-  <dl>
-      <dt><a href="unit_test_framework.html">Unit Testing</a></dt>
-      <dd class="clearfix">
-        <p>SproutCore has an easy-to-learn unit test facility that can be used to drive SproutCore test-driven development.  This guide describes the basic SproutCore test commands.</p>
-      </dd>
-      <dt><a href="adding_unit_test.html">Adding a Unit Test</a></dt>
-      <dd class="clearfix">
-        <p>Adding a unit test automatically or manually.</p>
-      </dd>
-      <dt><a href="writing_unit_tests.html">Writing Unit Tests</a></dt>
-      <dd class="clearfix">
-        <p>Describes how to write unit tests using module and test functions</p>
-      </dd>
-      <dt><a href="running_unit_tests.html">Running Unit Tests</a></dt>
-      <dd class="clearfix">
-        <p>How tests are loaded and executed by the test runner.</p>
-      </dd>
-      <dt><a href="todos_tdd.html">SproutCore Development Using TDD</a></dt>
-      <dd class="clearfix">
-        <p>Show implementing the TODOs project using TDD.</p>
-      </dd>
-  </dl>
-  <h3 class="group">Contributing to SproutCore</h3>
-
-  <dl>
-      <dt><a href="style_guide.html">Javascript Style Guide</a></dt>
-      <dd class="clearfix">
-        <p>This guide covers the style of SproutCore framework code.</p>
-      </dd>
-      <dt><a href="commit_code.html">Committer Guidelines</a></dt>
-      <dd class="clearfix">
-        <p>A detailed checklist of the do's and don'ts of SC framework code.</p>
-      </dd>
-      <dt><a href="documentation_guidelines.html">Documentation Guidelines</a></dt>
-      <dd class="clearfix">
-        <p>Writing and generating jsdoc documentation.</p>
-      </dd>
-  </dl>
-
-
+<div class="warning"><p>This guide is under construction.</p></div>
+<h3 id="test-drive-sproutcore-method-implementation">1 Test-drive SproutCore Method Implementation</h3>
+<h3 id="test-drive-observer-implementation">2 Test-drive Observer Implementation</h3>
+<h3 id="test-drive-bindings-implementation">3 Test-drive Bindings Implementation</h3>
+<h3 id="changelog">4 Changelog</h3>
+<ul>
+	<li>February 15, 2011: initial placeholder by <a href="credits.html#ssmith">Scott Smith</a> and <a href="credits.html#veebs">Vibul Imtarnasan</a></li>
+</ul>
 
       </div>
-      <div id="subCol">
-        <h3>Get Involved</h3>
-<p class="getInvolved">
-  <img src="../images/strobe/paperandpencil.png">
-  <a href="/contribute.html">Contribute New Guides</a><br>
-  SproutCore Guides are a community effort; contribute your own!
-</p>
-
-<p class="getInvolved">
-  <img src="../images/strobe/starperson.png">
-  <a href="/credits.html">Author Credits</a><br>
-  Meet the team responsible for putting the SproutCore Guides together.
-</p>
-
-<h3>Icon Legend</h3>
-
-<p>
-  <img src="../images/strobe/warning.png">
-  The warning icon means the content you're looking at isn't quite done yet.
-</p>
-
-<p>
-  <img src="../images/strobe/notes.png">
-  Notes are bits of important side info you want to make sure you pay attention to.
-</p>
-
-<p>
-  <img src="../images/strobe/pin.png">
-  Pins are for supplementary info tidbits you might want; background, fun facts, etc.
-</p>
-
-<p>
-  <img src="../images/strobe/code.png">
-  This icon tells you you're looking at code. Which you likely knew... It's still pretty :p
-</p>
-
-      </div>
+        <div id="subCol">
+          <h3 class="chapter"><img src="images/strobe/chapters.png" alt="" />Chapters</h3>
+          <ol class="chapters">
+            <li><a href="#test-drive-sproutcore-method-implementation"><p>Test-drive SproutCore Method Implementation</p>
+</a></li><li><a href="#test-drive-observer-implementation"><p>Test-drive Observer Implementation</p>
+</a></li><li><a href="#test-drive-bindings-implementation"><p>Test-drive Bindings Implementation</p>
+</a></li><li><a href="#changelog"><p>Changelog</p>
+</a></li>
+          </ol>
+        </div>
     </div>
   </div>
 
