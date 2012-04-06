@@ -4,6 +4,7 @@ This guide covers using Chance, SproutCore's CSS framework. You'll
 learn to:
 
 * Use SCSS syntax to reduce code and keep it clean.
+* Import the Compass framework, extending SCSS' usability.
 * Use +$theme+ to simplify rules.
 * Use the +@include slice+ directive to include images.
 * Use the +@include slices+ directive for multi-slice scaling.
@@ -14,8 +15,7 @@ h3. What Is Chance?
 
 Chance is SproutCore's CSS preprocessor. All CSS in your app goes through Chance.
 
-In addition to having its own CSS extensions, Chance includes "*_SCSS_*":http://sass-lang.com/.
-Even with all of these extensions, Chance is a superset of CSS. This means that 
+In addition to having its own CSS extensions, Chance includes "*_SCSS_*":http://sass-lang.com/ and "*_Compass_*":http://compass-style.org. Even with all of these extensions, Chance is a superset of CSS. This means that 
 all normal CSS will still "just work."
 
 WARNING: Chance expects to work with a SproutCore theme. Recent releases of the SproutCore build tools will set everything up for you, but if your app doesn't have a +theme.js+ file, you need to follow the directions in "Theming Your App: Giving Your App a Theme":theming_app.html#giving-your-app-a-theme
@@ -161,7 +161,52 @@ sc_require("resources/stylesheets/file1.css");
 }
 </css>
 
+h3. Compass
 
+Chance can also include the "Compass":http://compass-style.org framework; a set of reusable SCSS mixins, helpers and utilities that simplify CSS3 declarations using SCSS.
+
+NOTE: Just like Sass, Compass' own build tools process files differently than Chance. Remember, SproutCore sends _all_ CSS, including +.css+ files, through SCSS and Compass *(if imported)*. Give your files the +.css+ extension.
+
+Compass has many mixins, helpers and utilities. For full reference, refer to the official "Compass":http://compass-style.org documentation.
+
+h4. +@import+ Directive
+
+Compass can be included in any of your theme's +.css+ files by adding the +@import "compass/css3";+ directive at the top of the file. This will tell SCSS to include the Compass framework.
+
+In addition, you can include Compass globally by adding +@import "compass/css3";+ to your +_theme.css+ file.
+
+<css filename="apps/my_app/resources/_theme.css">
+@import "compass/css3";
+
+$theme: '.ace.MyTheme';
+</css>
+
+NOTE: Any +_theme.css+ file is prepended to all files inside its directory, and any subdirectories that don't define their own +_theme.css+ file. This allows you to give different directories different values for +$theme+ if you wish.
+
+h4. Mixins
+
+Compass makes it easy to add-in CSS3 declations in a single-line, making it easy to create effects and removing the redundancy of supporting multiple browsers. The +background-image+ and +linear-gradient+ mixin are an example of how Compass utilizes SCSS to reduce the amount of lines necessary to draw a gradient on the document body.
+
+<css filename="apps/my_app/resources/sample.css">
+@import "compass/css3";
+
+body {
+  @include background-image(linear-gradient(left top,  #fefcea 0%,#f1da36 100%));
+}
+</css>
+
+After processing, Compass will have produced the CSS necessary to show a gradient on all browsers that support CSS3 linear-gradient declaration:
+
+<css>
+body {
+  background: -moz-linear-gradient(-45deg,  #fefcea 0%, #f1da36 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fefcea), color-stop(100%,#f1da36));
+  background: -webkit-linear-gradient(-45deg,  #fefcea 0%,#f1da36 100%);
+  background: -o-linear-gradient(-45deg,  #fefcea 0%,#f1da36 100%);
+  background: -ms-linear-gradient(-45deg,  #fefcea 0%,#f1da36 100%);
+  background: linear-gradient(-45deg,  #fefcea 0%,#f1da36 100%);
+}
+</css>
 
 h3. +$theme+ Variable
 
@@ -389,3 +434,4 @@ h3. Changelog
 
 * January 20, 2011: initial version by "Alex Iskander":credits.html#ialexi
 * March    2, 2011: added filenames and changed +<javascript>+ tag to +<css>+ by "Topher Fangio":credits.html#topherfangio
+* April    5, 2012: added the Compass section and some other minor updates by "Steven Jabour":credits.html#stevenjabour
