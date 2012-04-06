@@ -49,6 +49,9 @@ authors:
     - name: Alex Iskander
       nick: ialexi
       description: Alex Iskander
+    - name: Steven Jabour
+      nick: sjabour
+      description: Steven Jabour
     - name: Tyler Keating
       nick: publickeating
       image: credits/tkeating.jpg
@@ -57,6 +60,9 @@ authors:
       nick: fkugler
       image: credits/fkugler.jpg
       description: Florian Kugler
+    - name: Greg Moeck
+      nick: gmoeck
+      description: Greg Moeck
     - name: Shawn Morel
       nick: shawnmorel
       description: Shawn Morel
@@ -79,9 +85,6 @@ authors:
       nick: dtorres
       image: credits/dtorres.jpg
       description: Devin Torres
-    - name: Greg Moeck
-      nick: gmoeck
-      description: Greg Moeck
 
 index:
   Start Here:
